@@ -17,14 +17,12 @@ uint64_t nPrime(uint64_t n) {
  uint64_t count, pr;
  pr = 2;
  count = 1;
- if (checkPrime(n)){
-  while (true){
-   if (n == count){
-    return pr;
-   }
-   pr++;
-   if (checkPrime(pr)) count++;
+ while (true){
+  if (n == count){
+   return pr;
   }
+  pr++;
+  if (checkPrime(pr)) count++;
  }
  return 0;
 }
