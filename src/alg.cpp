@@ -37,12 +37,12 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
- if (hbound == 1 || hbound == 0) return 0;
- hbound--;
- if (checkPrime(hbound)){
-  return (hbound + sumPrime(hbound));
+ uint64_t i, sum;
+ sum = 0;
+ for(i = 1; i < hbound; i++){
+  if(checkPrime(i)){
+   sum += i;
+  }
  }
- else if (!checkPrime(hbound)){
-  return sumPrime(hbound);
- }
+ return sum;
 }
